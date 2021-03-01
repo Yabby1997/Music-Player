@@ -17,37 +17,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-fp-qmI">
-                                <rect key="frame" x="8" y="483" width="398" height="31"/>
+                                <rect key="frame" x="8" y="433" width="398" height="31"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cDh-J6-PdU"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4of-KD-6N3">
+                                <rect key="frame" x="171.5" y="473" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsJ-TC-Cbw">
-                                <rect key="frame" x="172.5" y="437" width="69" height="22"/>
-                                <state key="normal" title="Button" image="play.fill" catalog="system"/>
+                                <rect key="frame" x="199.5" y="504" width="15" height="22"/>
+                                <state key="normal" image="play.fill" catalog="system"/>
                                 <state key="selected" image="pause.fill" catalog="system"/>
                                 <connections>
                                     <action selector="touchUpPlayPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqr-31-B0j"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4of-KD-6N3">
-                                <rect key="frame" x="171.5" y="523" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jsJ-TC-Cbw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4C0-fV-97f"/>
-                            <constraint firstItem="ZLd-fp-qmI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6Ms-Mh-fQa"/>
-                            <constraint firstItem="ZLd-fp-qmI" firstAttribute="top" secondItem="jsJ-TC-Cbw" secondAttribute="bottom" constant="24" id="8TN-Qy-r5j"/>
-                            <constraint firstItem="jsJ-TC-Cbw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ch8-IF-QrB"/>
-                            <constraint firstItem="ZLd-fp-qmI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="f4u-4N-Bqm"/>
-                            <constraint firstItem="4of-KD-6N3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ofd-OP-IH6"/>
-                            <constraint firstItem="4of-KD-6N3" firstAttribute="top" secondItem="ZLd-fp-qmI" secondAttribute="bottom" constant="10" id="w7C-09-Fa5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZLd-fp-qmI" secondAttribute="trailing" constant="10" id="EXJ-hl-wye"/>
+                            <constraint firstItem="4of-KD-6N3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PK0-p6-GyK"/>
+                            <constraint firstItem="ZLd-fp-qmI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QOj-vD-hXF"/>
+                            <constraint firstItem="jsJ-TC-Cbw" firstAttribute="top" secondItem="4of-KD-6N3" secondAttribute="bottom" constant="10" id="Wtp-Cn-LsE"/>
+                            <constraint firstItem="4of-KD-6N3" firstAttribute="top" secondItem="ZLd-fp-qmI" secondAttribute="bottom" constant="10" id="XQW-nY-96b"/>
+                            <constraint firstItem="jsJ-TC-Cbw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nv1-AC-38x"/>
+                            <constraint firstItem="ZLd-fp-qmI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uT1-CV-QSa"/>
                         </constraints>
                     </view>
                     <connections>

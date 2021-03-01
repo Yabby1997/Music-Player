@@ -13,6 +13,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
     var player: AVAudioPlayer!
     var timer: Timer!
     
+    // MARK: - IBOutlet
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var timeLabel: UILabel!
@@ -22,27 +23,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
         super.viewDidLoad()
         self.initializePlayer()
     }
-
-    @IBAction func touchUpPlayPauseButton(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected {
-            self.player?.play()
-            self.makeAndFireTimer()
-        } else {
-            self.player?.pause()
-            self.invalidateTimer()
-        }
-    }
-    
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        self.updateTimeLabelText(time: TimeInterval(sender.value))
-        if sender.isTracking { return }
-        self.player.currentTime = TimeInterval(sender.value)
-    }
     
     func initializePlayer() {
-        guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
+        guard let soundAsset = NSDataAsset(name: "sound") else {
             print("음원 파일 에셋을 가져올 수 없습니다")
             return
         }
@@ -54,6 +37,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
             print("플레이어 초기화 실패")
             print("코드 : \(error.code), 메시지 : \(error.localizedDescription)")
         }
+        
         
         self.progressBar.maximumValue = Float(self.player.duration)
         self.progressBar.minimumValue = 0
@@ -109,6 +93,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
         self.progressBar.value = 0
         self.updateTimeLabelText(time: 0)
         self.invalidateTimer()
+    }
+    
+    // MARK: - IBAction
+    @IBAction func touchUpPlayPauseButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            self.player?.play()
+            self.makeAndFireTimer()
+        } else {
+            self.player?.pause()
+            self.invalidateTimer()
+        }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        self.updateTimeLabelText(time: TimeInterval(sender.value))
+        if sender.isTracking { return }
+        self.player.currentTime = TimeInterval(sender.value)
     }
 }
 
